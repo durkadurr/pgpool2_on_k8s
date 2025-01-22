@@ -1,4 +1,4 @@
-FROM alpine:3.20 AS builder
+FROM alpine:3.21 AS builder
 
 ARG PGPOOL_VER
 
@@ -43,7 +43,7 @@ RUN set -eux \
     && make install
 
 
-FROM alpine:3.20
+FROM alpine:3.21
 
 ENV PGPOOL_INSTALL_DIR /opt/pgpool-II
 ENV PGPOOL_CONF_VOLUME /config
